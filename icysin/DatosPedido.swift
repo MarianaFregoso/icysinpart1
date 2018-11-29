@@ -1,5 +1,5 @@
 //
-//  info.swift
+//  DatosPedido.swift
 //  icysin
 //
 //  Created by Alumno on 28/11/18.
