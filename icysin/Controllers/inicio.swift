@@ -11,4 +11,13 @@ import UIKit
 
 class inicio: UIViewController {
     
+    @IBOutlet weak var vfondo: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        vfondo.layer.cornerRadius = 15
+    }
+    
 }
