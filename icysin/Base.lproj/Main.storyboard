@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="ptw-9O-FRl" customClass="cellhelados" customModule="icysin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellhelados" rowHeight="94" id="ptw-9O-FRl" customClass="cellhelados" customModule="icysin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ptw-9O-FRl" id="9Ia-3m-L8c">
@@ -77,6 +77,11 @@
                         <viewLayoutGuide key="safeArea" id="zl4-7c-bCw"/>
                     </view>
                     <navigationItem key="navigationItem" id="OuW-yA-Azs"/>
+                    <connections>
+                        <outlet property="imgpostre" destination="Hca-yA-YH1" id="7Hv-2v-mdp"/>
+                        <outlet property="lblnombrepostre" destination="n68-fF-STb" id="Tby-Kl-hcQ"/>
+                        <outlet property="tvHelados" destination="f2I-5V-snw" id="ANn-PV-JSh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7r-xm-rPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -771,6 +776,6 @@ Hicieron realidad lo que empezó como un sueño</string>
         <image name="inilogin" width="2344" height="5060"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5aq-Ap-Eyw"/>
+        <segue reference="VIG-lf-DvN"/>
     </inferredMetricsTieBreakers>
 </document>
