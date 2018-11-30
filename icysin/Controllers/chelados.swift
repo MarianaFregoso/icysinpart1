@@ -11,60 +11,69 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class helados: UIViewController{
-    
-    
+class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
     @IBOutlet weak var tvHelados: UITableView!
     
-    var urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
-    var helados : String = ""
+    var urlhelados = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
     var encontrada : String = ""
     
     func  tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DatosHelados.helados.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowA indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "cellhelados") as! cellhelados
         celda.lblnombrehelado.text = DatosHelados.helados[indexPath.row].nombre
-        celda.lblPrecio.text = DatosHelados.helados[indexPath.row].Precio 
+        celda.lblPrecio.text = DatosHelados.helados[indexPath.row].Precio
         return celda
     }
     
-    func tableView(_ tableView: UITableView, heightForRowA indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
     
     override func viewDidLoad() {
-         urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
+         urlhelados = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
         
-        if helados != "" {
-            helados = helados.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-            urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=\(helados)"
-            
+
             Alamofire.request(urlhelados).responseJSON { response in
                 if let dictRespusta = response.result.value as? NSDictionary{
-                    if let respuesta = dictRespusta.value(forKey: "Response") as? String {
+                    if let respuesta = dictRespusta.value(forKey: "status") as? String {
                     self.encontrada = respuesta
                     }
                     
-                    if self.encontrada == "True" {
-                        DatosHelados.helados.removeAll()
-                        if let buscar = dictRespusta.value(forKey: "Search") as? NSArray{
+                    if self.encontrada == "ok" {
+                        if let buscar = dictRespusta.value(forKey: "posts") as? NSArray{
+                            
+                            
                             for i in buscar{
-                                if let dictResultado = i as? NSDictionary {
+                                
+                                
+                                if let dictpo = i as? NSDictionary {
                                     var nombrehelado : String = ""
                                     var preciohelado : String = ""
-                                    
-                                    if let nombre = dictResultado.value(forKey: "Title") as? String{
-                                        nombrehelado = nombre
+                                    if let coco = dictpo.value(forKey: "title") as? String{
+                                        nombrehelado = coco
                                     }
                                     
-                                    if let precio = dictResultado.value(forKey: "precio") as? String{
-                                        preciohelado = precio
+                                    if let fe = dictpo.value(forKey: "custom_fields") as? NSDictionary{
+                                       
+                                        
+                                        
+                                       
+                                        
+                                        if let precio = fe.value(forKey: "precio") as? NSArray{
+                                            for i in precio{
+                                                if let precio = i as? String{
+                                                    preciohelado = precio
+                                                }
+                                            }
+                                        }
+                                        
+                                        
                                     }
                                     
-                                    DatosHelados.helados.append(Helado(nombre: nombrehelado, Precio: preciohelado, Descripcion: "", urlPoster: ""))
+                                   DatosHelados.helados.append(Helado(nombre: nombrehelado, Precio: preciohelado, Descripcion: "", urlPoster: ""))
                                 }
                             }
                             self.tvHelados.reloadData()
@@ -73,13 +82,7 @@ class helados: UIViewController{
                 }
             }
         }
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "ProductoDetalle" {
-            let destino = segue.destination as! detalleproducto
-            destino.helado = DatosHelados.helados[(tvHelados.indexPathForSelectedRow?.row)!]
-            
-        }
-    }
+    
+ 
 }

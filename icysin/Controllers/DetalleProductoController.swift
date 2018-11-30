@@ -22,6 +22,12 @@ class  detalleproducto: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if helado != nil {
+            urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
+        }
+        
+        
+        
         btnañadircomp.backgroundColor = UIColor.white
         btnañadircomp.layer.cornerRadius = 15
         btnañadircomp.setTitleColor(UIColor.black, for: .normal)
