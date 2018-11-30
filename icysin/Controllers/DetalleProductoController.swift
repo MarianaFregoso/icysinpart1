@@ -11,4 +11,17 @@ import UIKit
 
 class  detalleproducto: UIViewController {
     
+    @IBOutlet weak var btnañadircomp: UIButton!
+    @IBOutlet weak var vfondo: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        btnañadircomp.backgroundColor = UIColor.white
+        btnañadircomp.layer.cornerRadius = 15
+        btnañadircomp.setTitleColor(UIColor.black, for: .normal)
+        
+        vfondo.layer.cornerRadius = 18
+    }
+
 }
