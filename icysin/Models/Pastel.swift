@@ -11,18 +11,17 @@ import UIKit
 
 class Pastel {
     var nombre : String
-    var imagenlista : UIImage
-    var  imagendDetalle : UIImage
-    var  Descripcion : String
-    var Precio : Double
+    var Precio : String
+    var Descripcion : String
+    var urlPoster : String
     
-    init(nombre : String, imagenlista : UIImage, imagenDetalle : UIImage, Descripcion : String, Precio : Double) {
+    init(nombre : String, Precio : String, Descripcion : String, urlPoster :String) {
         self.nombre = nombre
-        self.imagenlista = imagenlista
-        self.imagendDetalle = imagenDetalle
-        self.Descripcion = Descripcion
         self.Precio = Precio
+        self.Descripcion = Descripcion
+        self.urlPoster = urlPoster
     }
+    
     
     
     

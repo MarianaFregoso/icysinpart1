@@ -59,7 +59,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-BJ-Wme">
-                                                    <rect key="frame" x="15" y="36" width="112" height="21"/>
+                                                    <rect key="frame" x="15" y="36" width="210" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -264,7 +264,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="97" id="mjw-YN-ITA" customClass="cellpastel" customModule="icysin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdapostre" rowHeight="97" id="mjw-YN-ITA" customClass="cellpastel" customModule="icysin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjw-YN-ITA" id="nIM-A2-ahM">
@@ -272,7 +272,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8z-qN-443">
-                                                    <rect key="frame" x="15" y="38" width="138" height="21"/>
+                                                    <rect key="frame" x="15" y="38" width="218" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -291,16 +291,23 @@
                                             <outlet property="lblnombrepastel" destination="P8z-qN-443" id="8MR-oK-rec"/>
                                             <outlet property="lblnombrepo" destination="P8z-qN-443" id="d38-WY-rvI"/>
                                             <outlet property="lblpreciopastel" destination="aQo-et-jUY" id="4Rd-gm-ObO"/>
-                                            <segue destination="Jru-au-pWZ" kind="show" id="5aq-Ap-Eyw"/>
+                                            <segue destination="Jru-au-pWZ" kind="show" identifier="cellpostre" id="5aq-Ap-Eyw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iC3-tN-Bhb" id="QUk-vb-lrM"/>
+                                    <outlet property="delegate" destination="iC3-tN-Bhb" id="lSM-nQ-fVA"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wxN-fG-d26"/>
                     </view>
                     <navigationItem key="navigationItem" id="DvQ-2i-X1X"/>
+                    <connections>
+                        <outlet property="tvpastelles" destination="DgO-nZ-eu7" id="FcH-8j-gfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4m-h8-Rm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -364,6 +371,10 @@
                     </view>
                     <connections>
                         <outlet property="btnañadircomp" destination="DQb-Iv-YmJ" id="2sY-l7-DR1"/>
+                        <outlet property="imgproducto" destination="c3O-g2-Qh0" id="TZL-FN-WSf"/>
+                        <outlet property="lbldescripcionproducto" destination="N9s-J4-Szk" id="XL0-FN-dsC"/>
+                        <outlet property="lblnombreproducto" destination="Egn-c5-r7m" id="f4R-Cs-nC4"/>
+                        <outlet property="lblprecioproducto" destination="QXr-Vd-RCn" id="LOF-pp-jW2"/>
                         <outlet property="vfondo" destination="EiT-2d-cgg" id="ELo-y0-IjS"/>
                     </connections>
                 </viewController>
@@ -785,6 +796,6 @@ Hicieron realidad lo que empezó como un sueño</string>
         <image name="inilogin" width="2344" height="5060"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VIG-lf-DvN"/>
+        <segue reference="5aq-Ap-Eyw"/>
     </inferredMetricsTieBreakers>
 </document>
