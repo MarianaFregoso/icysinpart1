@@ -27,8 +27,6 @@ class  detalleproducto: UIViewController {
     
     var urlhelados = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
     var encontrada : String = ""
-    
-     
      
     override func viewDidLoad() {
         super.viewDidLoad()

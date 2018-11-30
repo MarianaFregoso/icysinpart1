@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Alamofire
-import AlamofireImage
 
 class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
     @IBOutlet weak var tvHelados: UITableView!
@@ -82,7 +81,11 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                 }
             }
         }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductoDetalle" {
+            let destino = segue.destination as! detalleproducto
+            destino.helado = DatosHelados.helados[(tvHelados.indexPathForSelectedRow?.row)!]
+    }
     
  
 }

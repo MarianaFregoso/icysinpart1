@@ -264,7 +264,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdapostre" rowHeight="97" id="mjw-YN-ITA" customClass="cellpastel" customModule="icysin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellpostre" rowHeight="97" id="mjw-YN-ITA" customClass="cellpastel" customModule="icysin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjw-YN-ITA" id="nIM-A2-ahM">
@@ -288,7 +288,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblnombrepastel" destination="P8z-qN-443" id="8MR-oK-rec"/>
                                             <outlet property="lblnombrepo" destination="P8z-qN-443" id="d38-WY-rvI"/>
                                             <outlet property="lblpreciopastel" destination="aQo-et-jUY" id="4Rd-gm-ObO"/>
                                             <segue destination="Jru-au-pWZ" kind="show" identifier="cellpostre" id="5aq-Ap-Eyw"/>

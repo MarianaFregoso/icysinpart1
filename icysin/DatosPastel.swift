@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class  DatosPastel{
-    static var pasteles: [Pastel?] = []
+   static var pasteles: [Pastel] = []
 }

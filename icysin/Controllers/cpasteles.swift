@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 import Alamofire
-import AlamofireImage
 
 class pastel: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var tvpastelles: UITableView!
-    
+
     var urlpastelitos = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=pasteles"
     var encontrada : String = ""
     
@@ -22,9 +21,9 @@ class pastel: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celdapostre") as! cellpastel
-        celda.lblnombrepo.text = DatosPastel.pasteles[indexPath.row]?.nombre
-        celda.lblpreciopastel.text = DatosPastel.pasteles[indexPath.row]?.Precio
+        let celda = tableView.dequeueReusableCell(withIdentifier: "cellpostre") as! cellpastel
+        celda.lblnombrepo.text = DatosPastel.pasteles[indexPath.row].nombre
+        celda.lblpreciopastel.text = DatosPastel.pasteles[indexPath.row].Precio
         return celda
     }
     
@@ -82,5 +81,8 @@ class pastel: UIViewController, UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
+    
+    
+    
     
 }
