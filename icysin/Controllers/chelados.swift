@@ -24,6 +24,7 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
         let celda = tableView.dequeueReusableCell(withIdentifier: "cellhelados") as! cellhelados
         celda.lblnombrehelado.text = DatosHelados.helados[indexPath.row].nombre
         celda.lblPrecio.text = DatosHelados.helados[indexPath.row].Precio
+        celda.lbldescripcion.text = DatosHelados.helados[indexPath.row].Descripcion
         return celda
     }
     
@@ -51,6 +52,7 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                 if let dictpo = i as? NSDictionary {
                                     var nombrehelado : String = ""
                                     var preciohelado : String = ""
+                                    var descrihelado : String = ""
                                     if let coco = dictpo.value(forKey: "title") as? String{
                                         nombrehelado = coco
                                     }
@@ -69,6 +71,14 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                             }
                                         }
                                         
+                                        if let descripcion = fe.value(forKey: "descripcion") as? NSArray{
+                                            for i in descripcion{
+                                                if let descr = i as? String{
+                                                  descrihelado = descr
+                                                }
+                                            }
+                                        }
+                                        
                                         
                                     }
                                     
@@ -80,6 +90,10 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                     }
                 }
             }
+        
+        
+        
+        
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ProductoDetalle" {
@@ -87,5 +101,5 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
             destino.helado = DatosHelados.helados[(tvHelados.indexPathForSelectedRow?.row)!]
     }
     
- 
+    }
 }
