@@ -52,16 +52,12 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                 if let dictpo = i as? NSDictionary {
                                     var nombrehelado : String = ""
                                     var preciohelado : String = ""
-                                    var descrihelado : String = ""
+                                    var describirhelado : String = ""
                                     if let coco = dictpo.value(forKey: "title") as? String{
                                         nombrehelado = coco
                                     }
                                     
                                     if let fe = dictpo.value(forKey: "custom_fields") as? NSDictionary{
-                                       
-                                        
-                                        
-                                       
                                         
                                         if let precio = fe.value(forKey: "precio") as? NSArray{
                                             for i in precio{
@@ -71,13 +67,16 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                             }
                                         }
                                         
-                                        if let descripcion = fe.value(forKey: "descripcion") as? NSArray{
-                                            for i in descripcion{
-                                                if let descr = i as? String{
-                                                  descrihelado = descr
-                                                }
+                                        if let describir = fe.value(forKey: "descripcion") as? NSArray{
+                                            for i in describir{
+                                                if let describir = i as? String{
+                                                    describirhelado = describir
+                                            
                                             }
+                                            
                                         }
+                                        
+                                        
                                         
                                         
                                     }

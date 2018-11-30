@@ -40,6 +40,7 @@ class  detalleproducto: UIViewController {
             lbldescripcionproducto.text = helado?.Descripcion
         
         }
+        
         btnañadircomp.backgroundColor = UIColor.white
         btnañadircomp.layer.cornerRadius = 15
         btnañadircomp.setTitleColor(UIColor.black, for: .normal)

@@ -13,6 +13,5 @@ class cellhelados: UITableViewCell {
   
     @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var lblnombrehelado: UILabel!
-    
     @IBOutlet weak var lbldescripcion: UILabel!
 }
