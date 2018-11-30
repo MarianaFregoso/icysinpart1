@@ -51,12 +51,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="93.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hca-yA-YH1">
-                                                    <rect key="frame" x="15" y="9" width="141" height="75"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br4-lw-ZCJ">
+                                                    <rect key="frame" x="292" y="36" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n68-fF-STb">
-                                                    <rect key="frame" x="297" y="36" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-BJ-Wme">
+                                                    <rect key="frame" x="15" y="36" width="112" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -65,9 +68,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imghelados" destination="Hca-yA-YH1" id="38z-eh-yuz"/>
-                                            <outlet property="lblnombrehelado" destination="n68-fF-STb" id="sV8-VC-h2G"/>
-                                            <segue destination="Jru-au-pWZ" kind="show" id="VIG-lf-DvN"/>
+                                            <outlet property="lblPrecio" destination="Br4-lw-ZCJ" id="5Bh-Jf-1bx"/>
+                                            <outlet property="lblnombrehelado" destination="nzp-BJ-Wme" id="GNW-yI-QiB"/>
+                                            <segue destination="Jru-au-pWZ" kind="show" identifier="ProductoDetalle" id="VIG-lf-DvN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -78,8 +81,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="OuW-yA-Azs"/>
                     <connections>
-                        <outlet property="imgpostre" destination="Hca-yA-YH1" id="7Hv-2v-mdp"/>
-                        <outlet property="lblnombrepostre" destination="n68-fF-STb" id="Tby-Kl-hcQ"/>
                         <outlet property="tvHelados" destination="f2I-5V-snw" id="ANn-PV-JSh"/>
                     </connections>
                 </viewController>
@@ -266,12 +267,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="96.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4H-Gv-eRO">
-                                                    <rect key="frame" x="15" y="6" width="159" height="85"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8z-qN-443">
+                                                    <rect key="frame" x="15" y="38" width="138" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oL-xd-XJl">
-                                                    <rect key="frame" x="287" y="38" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQo-et-jUY">
+                                                    <rect key="frame" x="296" y="38" width="64" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -280,8 +284,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imgpastel" destination="n4H-Gv-eRO" id="aHx-hi-9fw"/>
-                                            <outlet property="lblnombrepastel" destination="1oL-xd-XJl" id="zJf-Tb-tIj"/>
+                                            <outlet property="lblnombrepastel" destination="P8z-qN-443" id="8MR-oK-rec"/>
+                                            <outlet property="lblnombrepo" destination="P8z-qN-443" id="d38-WY-rvI"/>
+                                            <outlet property="lblpreciopastel" destination="aQo-et-jUY" id="4Rd-gm-ObO"/>
                                             <segue destination="Jru-au-pWZ" kind="show" id="5aq-Ap-Eyw"/>
                                         </connections>
                                     </tableViewCell>

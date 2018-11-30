@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class cellpastel: UITableViewCell {
-    @IBOutlet weak var imgpastel: UIImageView!
-    @IBOutlet weak var lblnombrepastel: UILabel!
+    @IBOutlet weak var lblnombrepo: UILabel!
+    @IBOutlet weak var lblpreciopastel: UILabel!
+    
     
 }

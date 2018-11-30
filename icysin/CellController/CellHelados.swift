@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class cellhelados: UITableViewCell {
-    @IBOutlet weak var imghelados: UIImageView!
+  
+    @IBOutlet weak var lblPrecio: UILabel!
     @IBOutlet weak var lblnombrehelado: UILabel!
     
 }

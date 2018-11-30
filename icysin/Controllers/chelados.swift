@@ -27,7 +27,7 @@ class helados: UIViewController{
     func tableView(_ tableView: UITableView, cellForRowA indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "cellhelados") as! cellhelados
         celda.lblnombrehelado.text = DatosHelados.helados[indexPath.row].nombre
-        celda.imghelados.image = DatosHelados.helados[indexPath.row].imagenlista
+        celda.lblPrecio.text = DatosHelados.helados[indexPath.row].Precio 
         return celda
     }
     
@@ -37,8 +37,49 @@ class helados: UIViewController{
     
     override func viewDidLoad() {
          urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
-         
+        
+        if helados != "" {
+            helados = helados.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            urlhelados = "http://icysinhelados.azurewebsites.net/?json=get_posts&post_type=\(helados)"
+            
+            Alamofire.request(urlhelados).responseJSON { response in
+                if let dictRespusta = response.result.value as? NSDictionary{
+                    if let respuesta = dictRespusta.value(forKey: "Response") as? String {
+                    self.encontrada = respuesta
+                    }
+                    
+                    if self.encontrada == "True" {
+                        DatosHelados.helados.removeAll()
+                        if let buscar = dictRespusta.value(forKey: "Search") as? NSArray{
+                            for i in buscar{
+                                if let dictResultado = i as? NSDictionary {
+                                    var nombrehelado : String = ""
+                                    var preciohelado : String = ""
+                                    
+                                    if let nombre = dictResultado.value(forKey: "Title") as? String{
+                                        nombrehelado = nombre
+                                    }
+                                    
+                                    if let precio = dictResultado.value(forKey: "precio") as? String{
+                                        preciohelado = precio
+                                    }
+                                    
+                                    DatosHelados.helados.append(Helado(nombre: nombrehelado, Precio: preciohelado, Descripcion: "", urlPoster: ""))
+                                }
+                            }
+                            self.tvHelados.reloadData()
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "ProductoDetalle" {
+            let destino = segue.destination as! detalleproducto
+            destino.helado = DatosHelados.helados[(tvHelados.indexPathForSelectedRow?.row)!]
+            
+        }
+    }
 }
