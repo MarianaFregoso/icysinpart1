@@ -81,7 +81,14 @@ class pastel: UIViewController, UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductoPostre" {
+            let destino = segue.destination as! detalleproducto
+            destino.pastel = DatosPastel.pasteles[(tvpastelles.indexPathForSelectedRow?.row)!]
+        }
+        
+        
+    }
     
     
     

@@ -298,7 +298,7 @@
                                         <connections>
                                             <outlet property="lblnombrepo" destination="P8z-qN-443" id="d38-WY-rvI"/>
                                             <outlet property="lblpreciopastel" destination="aQo-et-jUY" id="4Rd-gm-ObO"/>
-                                            <segue destination="Jru-au-pWZ" kind="show" identifier="cellpostre" id="5aq-Ap-Eyw"/>
+                                            <segue destination="Jru-au-pWZ" kind="show" identifier="ProductoPostre" id="5aq-Ap-Eyw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -336,8 +336,16 @@
                                 <rect key="frame" x="-4" y="88" width="382" height="278"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQb-Iv-YmJ">
+                                <rect key="frame" x="154" y="692" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Añadir complemento"/>
+                                <connections>
+                                    <segue destination="eSD-mb-awK" kind="show" id="QE7-G9-rOi"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-2d-cgg" customClass="cellhelados" customModule="icysin" customModuleProvider="target">
-                                <rect key="frame" x="14" y="386" width="344" height="298"/>
+                                <rect key="frame" x="15" y="442" width="344" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egn-c5-r7m">
@@ -354,24 +362,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9s-J4-Szk">
-                                        <rect key="frame" x="15" y="145" width="309" height="131"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQb-Iv-YmJ">
-                                <rect key="frame" x="154" y="692" width="210" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Añadir complemento"/>
-                                <connections>
-                                    <segue destination="eSD-mb-awK" kind="show" id="QE7-G9-rOi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eeM-zp-CXD"/>
@@ -379,7 +372,6 @@
                     <connections>
                         <outlet property="btnañadircomp" destination="DQb-Iv-YmJ" id="2sY-l7-DR1"/>
                         <outlet property="imgproducto" destination="c3O-g2-Qh0" id="TZL-FN-WSf"/>
-                        <outlet property="lbldescripcionproducto" destination="N9s-J4-Szk" id="XL0-FN-dsC"/>
                         <outlet property="lblnombreproducto" destination="Egn-c5-r7m" id="f4R-Cs-nC4"/>
                         <outlet property="lblprecioproducto" destination="QXr-Vd-RCn" id="LOF-pp-jW2"/>
                         <outlet property="vfondo" destination="EiT-2d-cgg" id="ELo-y0-IjS"/>
@@ -803,6 +795,6 @@ Hicieron realidad lo que empezó como un sueño</string>
         <image name="inilogin" width="2344" height="5060"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VIG-lf-DvN"/>
+        <segue reference="5aq-Ap-Eyw"/>
     </inferredMetricsTieBreakers>
 </document>

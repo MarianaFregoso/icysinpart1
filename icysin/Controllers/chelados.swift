@@ -52,7 +52,6 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                 if let dictpo = i as? NSDictionary {
                                     var nombrehelado : String = ""
                                     var preciohelado : String = ""
-                                    var describirhelado : String = ""
                                     if let coco = dictpo.value(forKey: "title") as? String{
                                         nombrehelado = coco
                                     }
@@ -67,17 +66,6 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                                             }
                                         }
                                         
-                                        if let describir = fe.value(forKey: "descripcion") as? NSArray{
-                                            for i in describir{
-                                                if let describir = i as? String{
-                                                    describirhelado = describir
-                                            
-                                            }
-                                            
-                                        }
-                                        
-                                        
-                                        
                                         
                                     }
                                     
@@ -89,10 +77,6 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
                     }
                 }
             }
-        
-        
-        
-        
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ProductoDetalle" {
@@ -100,5 +84,8 @@ class helados: UIViewController,UITableViewDataSource ,UITableViewDelegate{
             destino.helado = DatosHelados.helados[(tvHelados.indexPathForSelectedRow?.row)!]
     }
     
+    
+        }
+    
     }
-}
+

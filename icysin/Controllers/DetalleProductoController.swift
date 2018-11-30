@@ -24,11 +24,15 @@ class  detalleproducto: UIViewController {
     
     
     var helado : Helado?
+    var pastel : Pastel?
     
     var urlhelados = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=helados"
     var urlimagen = "https://icysinhelados.azurewebsites.net//wp-content/uploads/2018/11/vainilla.jpg"
     
+    var urlpastelitos = "https://icysinhelados.azurewebsites.net/?json=get_posts&post_type=pasteles"
+    
     var encontrada : String = ""
+    
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +41,12 @@ class  detalleproducto: UIViewController {
         if  helado != nil{
             lblnombreproducto.text = helado?.nombre
             lblprecioproducto.text = helado?.Precio
-            lbldescripcionproducto.text = helado?.Descripcion
         
+        }
+        
+        if pastel != nil{
+            lblnombreproducto.text = pastel?.nombre
+            lblprecioproducto.text = pastel?.Precio
         }
         
         btnañadircomp.backgroundColor = UIColor.white
